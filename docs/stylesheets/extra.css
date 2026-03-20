@@ -1,0 +1,146 @@
+/* --- Admonition colour tweaks --- */
+:root {
+    --md-admonition-icon--pattern: url('data:image/svg+xml,...');
+    --pattern-accent: #7c4dff;
+}
+
+/* Pattern "role" table,subtle row striping */
+.md-typeset table:not([class]) tr:nth-child(even) {
+    background-color: var(--md-code-bg-color);
+}
+
+/* Wider content area on large screens */
+@media screen and (min-width: 76.25em) {
+    .md-content {
+        max-width: 52rem;
+    }
+}
+
+/* Better code block appearance */
+.md-typeset .highlight pre,
+.md-typeset pre code {
+    border-radius: 0.5rem;
+}
+
+/* Nicer tab strip */
+.md-typeset .tabbed-labels > label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+/* "When to use" checklist styling */
+.md-typeset .task-list-control .task-list-indicator::before {
+    background-color: var(--md-accent-fg-color);
+}
+
+/* Pattern summary cards on index page */
+.pattern-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.pattern-card {
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: var(--md-code-bg-color);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.pattern-card:hover {
+    border-color: var(--md-accent-fg-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.pattern-card h4 {
+    margin: 0 0 0.4rem;
+    font-size: 0.9rem;
+    color: var(--md-accent-fg-color);
+}
+
+.pattern-card p {
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--md-default-fg-color--light);
+}
+
+/* Horizontal rule spacing */
+.md-typeset hr {
+    margin: 2rem 0;
+    border-color: var(--md-default-fg-color--lightest);
+}
+
+/* Inline PHP highlight colour */
+.md-typeset code {
+    color: var(--md-accent-fg-color);
+    background-color: var(--md-code-bg-color);
+}
+
+/* ---------------------------------------------------------------
+   Mermaid diagrams,larger, centred, with breathing room
+   --------------------------------------------------------------- */
+
+/* Expand the SVG to fill the available content width */
+.md-typeset .mermaid {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+.md-typeset .mermaid svg {
+    /* Never wider than the content column, but scale up freely below that */
+    max-width: 100%;
+    /* Minimum height so small diagrams aren't squashed */
+    min-height: 260px;
+    /* Let the SVG grow to its natural height */
+    height: auto;
+    /* Slight background + border so the diagram sits on its own surface */
+    background: var(--md-code-bg-color);
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    box-sizing: border-box;
+}
+
+/* Scale up node text so it stays readable at larger sizes */
+.md-typeset .mermaid svg .label,
+.md-typeset .mermaid svg text {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif !important;
+    font-size: 0.85rem !important;
+}
+
+/* ---------------------------------------------------------------
+   Footer copyright
+   --------------------------------------------------------------- */
+.md-footer-meta {
+    background-color: var(--md-footer-bg-color);
+}
+
+.md-copyright {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.72rem;
+    color: var(--md-footer-fg-color--lighter);
+    padding: 0.6rem 0;
+}
+
+.md-copyright__highlight {
+    color: var(--md-footer-fg-color--light);
+    font-weight: 500;
+}
+
+.md-copyright a {
+    color: var(--md-footer-fg-color--light);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.md-copyright a:hover {
+    color: var(--md-accent-fg-color);
+}

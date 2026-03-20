@@ -1,0 +1,41 @@
+{
+    "name": "becoming-a-senior/php-katas",
+    "description": "A collection of common katas, algorithms, and data structure problems solved in PHP, with multiple implementations and benchmarks.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "BecomingASenior.com",
+            "email": "moe@meetmoe.de"
+        }
+    ],
+    "minimum-stability": "stable",
+    "scripts": {
+        "lint": "phpcs .",
+        "test": "phpunit",
+        "analyse": "phpstan analyse",
+        "tools": [
+            "@lint",
+            "@test",
+            "@analyse"
+        ]
+    },
+    "autoload": {
+        "psr-4": {
+            "Katas\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^13.0",
+        "squizlabs/php_codesniffer": "^4.0",
+        "phpstan/phpstan": "^2.1",
+        "phpstan/phpstan-phpunit": "^2.0"
+    }
+}
